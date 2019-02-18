@@ -32,6 +32,7 @@ public class ExecuteJavascript {
 		WebElement modalButton = driver.findElement(By.id("modal-button"));
 		modalButton.click();
 
+		Thread.sleep(1000);
 
 		WebElement modalCloseButton = driver.findElement(By.id("close-button"));
 
