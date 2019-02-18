@@ -16,8 +16,9 @@ public class AutoComplete {
 
 	/**
 	 * @param args
+	 * @throws InterruptedException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		
 		System.setProperty("webdriver.chrome.driver",
@@ -28,12 +29,13 @@ public class AutoComplete {
 		driver.get("https://formy-project.herokuapp.com/autocomplete");
 		
 		WebElement autocomplete = driver.findElement(By.id("autocomplete"));
-		autocomplete.click();
-		autocomplete.sendKeys("123 Bonita Street");
+		autocomplete.sendKeys("123 Bonita Street, Palo Alto, CA");
 		
-		WebElement button = driver.findElement(By.id("button"));
+		Thread.sleep(5000);
 		
-		button.click();
+		WebElement autocompleteResult = driver.findElement(By.className("pac-item"));
+		autocompleteResult.click();
+		
 		
 		
 		driver.quit();
