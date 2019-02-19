@@ -6,6 +6,9 @@ package com.my.webdriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 
 /**
@@ -29,14 +32,12 @@ public class AutoComplete {
 		driver.get("https://formy-project.herokuapp.com/autocomplete");
 		
 		WebElement autocomplete = driver.findElement(By.id("autocomplete"));
-		autocomplete.sendKeys("123 Bonita Street, Palo Alto, CA");
+		autocomplete.sendKeys("1555 Park Blvd, Palo Alto, CA");
 		
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		WebElement autocompleteResult = driver.findElement(By.className("pac-item"));
 		autocompleteResult.click();
-		
-		
 		
 		driver.quit();
 		
