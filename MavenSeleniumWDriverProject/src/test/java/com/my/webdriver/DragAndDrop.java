@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.By;
 
 /**
@@ -19,7 +21,7 @@ public class DragAndDrop {
 	 * @param args
 	 * @throws InterruptedException 
 	 */
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args){
 
 
 		System.setProperty("webdriver.chrome.driver",
@@ -29,24 +31,21 @@ public class DragAndDrop {
 
 		driver.get("https://formy-project.herokuapp.com/dragdrop");
 
+/**
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+
+		WebElement image = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.id("image")));
+
+		WebElement box = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.id("box")));
+ */
 
 		WebElement image = driver.findElement(By.id("image"));
-
 		WebElement box = driver.findElement(By.id("box"));
 
-
 		Actions actions = new Actions(driver);
-
-		actions.doubleClick(image);
-
-		Thread.sleep(2000);
-
-		actions.contextClick(box);
-
-		Thread.sleep(2000);
-
-		actions.dragAndDrop(image, box).perform();
-		actions.build();
+		actions.dragAndDrop(image,box).build().perform();
 
 		//Thread.sleep(1000);
 		//driver.quit();
