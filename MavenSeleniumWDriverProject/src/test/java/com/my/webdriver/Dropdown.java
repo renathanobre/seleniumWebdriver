@@ -39,7 +39,7 @@ public class Dropdown {
 		Thread.sleep(1000);
 		
 				
-		//driver.quit();
+		driver.quit();
 		
 	}
 
