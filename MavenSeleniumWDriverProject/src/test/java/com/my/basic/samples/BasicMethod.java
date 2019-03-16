@@ -20,7 +20,7 @@ public class BasicMethod {
 
 
 		System.setProperty("webdriver.gecko.driver",
-				"C:\\Renata\\projetos\\app\\geckodriver.exe");
+				"C:\\app\\geckodriver.exe");
 
 		WebDriver driver = new FirefoxDriver();
 

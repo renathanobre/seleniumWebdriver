@@ -23,7 +23,7 @@ public class DatePicker {
 
 		
 		System.setProperty("webdriver.chrome.driver",
-	            "C:\\Renata\\projetos\\app\\chromedriver.exe");
+	            "C:\\app\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
 		
