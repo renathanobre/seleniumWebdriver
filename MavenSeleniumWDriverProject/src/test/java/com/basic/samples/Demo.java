@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.my.udemy;
+package com.basic.samples;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -29,12 +29,19 @@ public class Demo {
 
 		Thread.sleep(1000);
 
-		driver.getTitle();
+		driver.getTitle(); //hit url on the browser
 		System.out.println(driver.getTitle()); //validate if your  Page title is correct
-		
+
 		System.out.println(driver.getCurrentUrl()); //validate you are landed on correct url
-		
-		System.out.println(driver.getPageSource());
+
+		System.out.println(driver.getPageSource()); //print source page
+
+		driver.get("http://yahoo.com");
+
+		driver.navigate().back();
+
+		driver.close(); //it closes current browsers
+		//driver.quit(); //it closes all the browsers opened by selenium script
 
 
 
