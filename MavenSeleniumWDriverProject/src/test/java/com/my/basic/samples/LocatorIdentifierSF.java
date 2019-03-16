@@ -31,12 +31,10 @@ public class LocatorIdentifierSF {
 
 		driver.findElement(By.id("username")).sendKeys("hello");
 		driver.findElement(By.name("pw")).sendKeys("123456");
-		/**
-		 * Compound class not accepted
-		 * 
-		 */
-	//	driver.findElement(By.className(("button"))).click();;
-		
+
+		//when xpath starts with html - not reliable - Switch browser to get another one
+		driver.findElement(By.xpath(("//*[@id=\'Login\']"))).click();;
+
 		driver.close(); //it closes current browsers
 		//driver.quit(); //it closes all the browsers opened by selenium script
 
