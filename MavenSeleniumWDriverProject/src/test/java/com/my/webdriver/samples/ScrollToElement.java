@@ -1,19 +1,19 @@
 /**
  * 
  */
-package com.my.webdriver;
+package com.my.webdriver.samples;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Alert;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.By;
 
 /**
  * @author renat
  *
  */
-public class SwitchToAlert {
+public class ScrollToElement {
 
 	/**
 	 * @param args
@@ -27,14 +27,16 @@ public class SwitchToAlert {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://formy-project.herokuapp.com/switch-window");
+		driver.get("https://formy-project.herokuapp.com/scroll");
 		
-		WebElement alertButton = driver.findElement(By.id("alert-button"));
-		alertButton.click();
+		WebElement name = driver.findElement(By.id("name"));
+	    Actions actions = new Actions(driver);
+	    actions.moveToElement(name);
+		name.sendKeys("Renata Vieira");
 		
-		Alert alert = driver.switchTo().alert();
-		alert.accept();
 		
+		WebElement date = driver.findElement(By.id("date"));
+		date.sendKeys("02/02/2019");
 		
 		Thread.sleep(1000);
 		driver.quit();

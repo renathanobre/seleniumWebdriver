@@ -1,18 +1,19 @@
 /**
  * 
  */
-package com.my.webdriver;
+package com.my.webdriver.samples;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 
 /**
  * @author renat
  *
  */
-public class SwitchToActiveWindow {
+public class SwitchToAlert {
 
 	/**
 	 * @param args
@@ -28,16 +29,11 @@ public class SwitchToActiveWindow {
 		
 		driver.get("https://formy-project.herokuapp.com/switch-window");
 		
-		WebElement newTabButton = driver.findElement(By.id("new-tab-button"));
-		newTabButton.click();
+		WebElement alertButton = driver.findElement(By.id("alert-button"));
+		alertButton.click();
 		
-		String originalHandle = driver.getWindowHandle();
-		
-		for (String handle1: driver.getWindowHandles()){
-			driver.switchTo().window(handle1);
-		}
-		
-		driver.switchTo().window(originalHandle);
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
 		
 		
 		Thread.sleep(1000);

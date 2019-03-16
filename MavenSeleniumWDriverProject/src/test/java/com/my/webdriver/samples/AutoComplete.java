@@ -1,19 +1,21 @@
 /**
  * 
  */
-package com.my.webdriver;
+package com.my.webdriver.samples;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 
 /**
  * @author renat
  *
  */
-public class ScrollToElement {
+public class AutoComplete {
 
 	/**
 	 * @param args
@@ -27,18 +29,16 @@ public class ScrollToElement {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://formy-project.herokuapp.com/scroll");
+		driver.get("https://formy-project.herokuapp.com/autocomplete");
 		
-		WebElement name = driver.findElement(By.id("name"));
-	    Actions actions = new Actions(driver);
-	    actions.moveToElement(name);
-		name.sendKeys("Renata Vieira");
+		WebElement autocomplete = driver.findElement(By.id("autocomplete"));
+		autocomplete.sendKeys("1555 Park Blvd, Palo Alto, CA");
 		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
-		WebElement date = driver.findElement(By.id("date"));
-		date.sendKeys("02/02/2019");
+		WebElement autocompleteResult = driver.findElement(By.className("pac-item"));
+		autocompleteResult.click();
 		
-		Thread.sleep(1000);
 		driver.quit();
 		
 	}

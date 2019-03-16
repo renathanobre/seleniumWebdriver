@@ -1,19 +1,18 @@
 /**
  * 
  */
-package com.my.webdriver;
+package com.my.webdriver.samples;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
 /**
  * @author renat
  *
  */
-public class DatePicker {
+public class FileUpload {
 
 	/**
 	 * @param args
@@ -27,18 +26,14 @@ public class DatePicker {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://formy-project.herokuapp.com/datepicker");
+		driver.get("https://formy-project.herokuapp.com/fileupload");
 		
 		Thread.sleep(1000);
 		
-		WebElement dateField = driver.findElement(By.id("datepicker"));
-		dateField.sendKeys("02/02/2019");
-		Thread.sleep(500);
-		dateField.sendKeys(Keys.RETURN);
-		
+		WebElement uploadField= driver.findElement(By.id("file-upload-field"));
+		uploadField.sendKeys("success.png");
 		Thread.sleep(1000);
 		
-				
 		driver.quit();
 		
 	}

@@ -1,21 +1,18 @@
 /**
  * 
  */
-package com.my.webdriver;
+package com.my.webdriver.samples;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 
 /**
  * @author renat
  *
  */
-public class AutoComplete {
+public class SwitchToActiveWindow {
 
 	/**
 	 * @param args
@@ -29,16 +26,21 @@ public class AutoComplete {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://formy-project.herokuapp.com/autocomplete");
+		driver.get("https://formy-project.herokuapp.com/switch-window");
 		
-		WebElement autocomplete = driver.findElement(By.id("autocomplete"));
-		autocomplete.sendKeys("1555 Park Blvd, Palo Alto, CA");
+		WebElement newTabButton = driver.findElement(By.id("new-tab-button"));
+		newTabButton.click();
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		String originalHandle = driver.getWindowHandle();
 		
-		WebElement autocompleteResult = driver.findElement(By.className("pac-item"));
-		autocompleteResult.click();
+		for (String handle1: driver.getWindowHandles()){
+			driver.switchTo().window(handle1);
+		}
 		
+		driver.switchTo().window(originalHandle);
+		
+		
+		Thread.sleep(1000);
 		driver.quit();
 		
 	}

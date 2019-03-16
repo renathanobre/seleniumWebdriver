@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.basic.samples;
+package com.my.basic.samples;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * @author renat
  *
  */
-public class Demo {
+public class BasicMethod {
 
 	/**
 	 * @param args

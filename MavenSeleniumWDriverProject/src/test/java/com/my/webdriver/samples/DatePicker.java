@@ -1,18 +1,19 @@
 /**
  * 
  */
-package com.my.webdriver;
+package com.my.webdriver.samples;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 /**
  * @author renat
  *
  */
-public class RadioButtons {
+public class DatePicker {
 
 	/**
 	 * @param args
@@ -26,23 +27,18 @@ public class RadioButtons {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://formy-project.herokuapp.com/radiobutton");
+		driver.get("https://formy-project.herokuapp.com/datepicker");
 		
 		Thread.sleep(1000);
 		
-		WebElement radioButtonOne = driver.findElement(By.id("radio-button-1"));
-		radioButtonOne.click();
+		WebElement dateField = driver.findElement(By.id("datepicker"));
+		dateField.sendKeys("02/02/2019");
+		Thread.sleep(500);
+		dateField.sendKeys(Keys.RETURN);
 		
 		Thread.sleep(1000);
 		
-		WebElement radioButtonTwo = driver.findElement(By.cssSelector("input[value='option2']"));
-		radioButtonTwo.click();
-		
-		Thread.sleep(1000);
-		
-		WebElement radioButtonThree = driver.findElement(By.xpath("/html/body/div/div[3]/input"));
-		radioButtonThree.click();
-		
+				
 		driver.quit();
 		
 	}
