@@ -1,6 +1,6 @@
 # Selenium webdriver with java
 
-![Selenium-Test-Automation-Framework (2)](https://user-images.githubusercontent.com/23301330/54579720-0ea9c180-49c2-11e9-9bf2-aa39c5c74056.jpg)
+![selenium-webdriver-course](https://user-images.githubusercontent.com/23301330/54579766-49abf500-49c2-11e9-8a2e-f5e2a2ef9174.jpg)
 
 ###### Writer: *Renata Nobre Vieira*.
 
